@@ -2,40 +2,40 @@ import dataEmployee from "./JSON/input.json" assert { type: "json" };
 
 const projects = dataEmployee;
 
-// function buildEmployeeHierarchy(employees, employeeHierarchies, employeeName) {
-//   const employee = employeeHierarchies.find(
-//     (item) => item.employeeName === employeeName
-//   );
+function EmployeeHirarki(employees, employeeHierarchies, employeeName) {
+  const employee = employeeHierarchies.find(
+    (item) => item.employeeName === employeeName
+  );
 
-//   if (!employee) {
-//     return { employee: employeeName, superiors: [] };
-//   }
+  if (!employee) {
+    return { employee: employeeName, superiors: [] };
+  }
 
-//   const superiors = [];
-//   let currentEmployee = employee;
+  const superiors = [];
+  let currentEmployee = employee;
 
-//   while (currentEmployee) {
-//     superiors.unshift(currentEmployee.employeeName);
-//     const manager = employeeHierarchies.find((item) =>
-//       item.directReports.includes(currentEmployee.employeeName)
-//     );
+  while (currentEmployee) {
+    superiors.unshift(currentEmployee.employeeName);
+    const manager = employeeHierarchies.find((item) =>
+      item.directReports.includes(currentEmployee.employeeName)
+    );
 
-//     if (manager && manager.employeeName !== employeeName) {
-//       if (superiors.includes(manager.employeeName)) {
-//         throw new Error(
-//           `unable to process employee tree. ${
-//             currentEmployee.employeeName
-//           } has multiple managers: ${superiors.join(",")}`
-//         );
-//       }
-//       superiors.unshift(manager.employeeName);
-//     }
+    if (manager && manager.employeeName !== employeeName) {
+      if (superiors.includes(manager.employeeName)) {
+        throw new Error(
+          `unable to process employee tree. ${
+            currentEmployee.employeeName
+          } has multiple managers: ${superiors.join(",")}`
+        );
+      }
+      superiors.unshift(manager.employeeName);
+    }
 
-//     currentEmployee = manager;
-//   }
+    currentEmployee = manager;
+  }
 
-//   return { employee: employeeName, superiors };
-// }
+  return { employee: employeeName, superiors };
+}
 
 function EmployeeStruktur(projects) {
   const result = [];
@@ -47,7 +47,7 @@ function EmployeeStruktur(projects) {
     const employeeHierarchiesToDisplay =
       project.employeeHierarchiesToDisplay.map((employeeName) => {
         try {
-          return buildEmployeeHierarchy(
+          return EmployeeHirarki(
             project.employees,
             employeeHierarchies,
             employeeName
