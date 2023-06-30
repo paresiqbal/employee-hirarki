@@ -1,0 +1,36 @@
+[
+  {
+    "projectName": "ProjectMidland",
+    "employees": [
+      "raelynn",
+      "darin",
+      "kacie",
+      "jordana",
+      "everett",
+      "bertha",
+      "peg",
+      "hugh",
+      "eveleen",
+      "evelina"
+    ],
+    "employeeHierarchies": [
+      {
+        "employeeName": "raelynn",
+        "directReports": ["darin", "kacie"]
+      },
+      {
+        "employeeName": "darin",
+        "directReports": ["jordana", "everett", "bertha"]
+      },
+      {
+        "employeeName": "kacie",
+        "directReports": ["peg", "hugh", "eveleen"]
+      },
+      {
+        "employeeName": "eveleen",
+        "directReports": ["evelina"]
+      }
+    ],
+    "employeeHierarchiesToDisplay": ["evelina", "bertha"]
+  }
+]

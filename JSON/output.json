@@ -1,0 +1,15 @@
+[
+  {
+    "projectName": "ProjectMidland",
+    "employeeHierarchies": [
+      {
+        "employee": "evelina",
+        "superiors": ["eveleen", "kacie", "raelynn"]
+      },
+      {
+        "employee": "bertha",
+        "superiors": ["darin", "raelynn"]
+      }
+    ]
+  }
+]
