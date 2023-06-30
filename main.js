@@ -2,6 +2,35 @@ import dataEmployee from "./JSON/input.json" assert { type: "json" };
 
 const projects = dataEmployee;
 
+function EmployeeStruktur(projects) {
+  const result = [];
+
+  projects.forEach((project) => {
+    const projectName = project.projectName;
+    const employeeHierarchies = project.employeeHierarchies;
+
+    const employeeHierarchiesToDisplay =
+      project.employeeHierarchiesToDisplay.map((employeeName) => {
+        try {
+          return EmployeeHirarki(
+            project.employees,
+            employeeHierarchies,
+            employeeName
+          );
+        } catch (error) {
+          return { employee: employeeName, error: error.message };
+        }
+      });
+
+    result.push({
+      projectName,
+      employeeHierarchies: employeeHierarchiesToDisplay,
+    });
+  });
+
+  return result;
+}
+
 function EmployeeHirarki(employees, employeeHierarchies, employeeName) {
   const employee = employeeHierarchies.find(
     (item) => item.employeeName === employeeName
@@ -35,35 +64,6 @@ function EmployeeHirarki(employees, employeeHierarchies, employeeName) {
   }
 
   return { employee: employeeName, superiors };
-}
-
-function EmployeeStruktur(projects) {
-  const result = [];
-
-  projects.forEach((project) => {
-    const projectName = project.projectName;
-    const employeeHierarchies = project.employeeHierarchies;
-
-    const employeeHierarchiesToDisplay =
-      project.employeeHierarchiesToDisplay.map((employeeName) => {
-        try {
-          return EmployeeHirarki(
-            project.employees,
-            employeeHierarchies,
-            employeeName
-          );
-        } catch (error) {
-          return { employee: employeeName, error: error.message };
-        }
-      });
-
-    result.push({
-      projectName,
-      employeeHierarchies: employeeHierarchiesToDisplay,
-    });
-  });
-
-  return result;
 }
 
 const output = EmployeeStruktur(projects);
