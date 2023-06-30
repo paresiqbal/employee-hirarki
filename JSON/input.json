@@ -32,5 +32,44 @@
       }
     ],
     "employeeHierarchiesToDisplay": ["evelina", "bertha"]
+  },
+  {
+    "projectName": "ProjectQuant",
+    "employees": [
+      "maurice",
+      "hayleigh",
+      "edwyn",
+      "keane",
+      "kylee"
+    ],
+    "employeeHierarchies": [
+      {
+        "employeeName": "maurice",
+        "directReports": ["hayleigh", "edwyn"]
+      },
+      {
+        "employeeName": "hayleigh",
+        "directReports": ["edwyn", "keane", "kylee"]
+      }
+    ],
+    "employeeHierarchiesToDisplay": ["kylee", "edwyn"]
+  },
+  {
+    "projectName": "ProjectGeorgia",
+    "employees": [
+      "lori",
+      "fletcher",
+      "tabitha",
+      "linton",
+      "tressa",
+      "rosanna"
+    ],
+    "employeeHierarchies": [
+      {
+        "employeeName": "tabitha",
+        "directReports": ["linton", "tressa"]
+      }
+    ],
+    "employeeHierarchiesToDisplay": ["rosanna"]
   }
 ]
