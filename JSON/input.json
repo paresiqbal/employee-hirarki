@@ -35,13 +35,7 @@
   },
   {
     "projectName": "ProjectQuant",
-    "employees": [
-      "maurice",
-      "hayleigh",
-      "edwyn",
-      "keane",
-      "kylee"
-    ],
+    "employees": ["maurice", "hayleigh", "edwyn", "keane", "kylee"],
     "employeeHierarchies": [
       {
         "employeeName": "maurice",
@@ -56,14 +50,7 @@
   },
   {
     "projectName": "ProjectGeorgia",
-    "employees": [
-      "lori",
-      "fletcher",
-      "tabitha",
-      "linton",
-      "tressa",
-      "rosanna"
-    ],
+    "employees": ["lori", "fletcher", "tabitha", "linton", "tressa", "rosanna"],
     "employeeHierarchies": [
       {
         "employeeName": "tabitha",
