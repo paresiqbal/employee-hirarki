@@ -1,3 +1,5 @@
+import projects from "./JSON/input.json" assert { type: "json" };
+
 function generateEmployeeHierarchies(projects) {
   const output = [];
 
@@ -102,68 +104,68 @@ function checkForErrors(
   return null;
 }
 
-const projects = [
-  {
-    projectName: "ProjectMidland",
-    employees: [
-      "raelynn",
-      "darin",
-      "kacie",
-      "jordana",
-      "everett",
-      "bertha",
-      "peg",
-      "hugh",
-      "eveleen",
-      "evelina",
-    ],
-    employeeHierarchies: [
-      {
-        employeeName: "raelynn",
-        directReports: ["darin", "kacie"],
-      },
-      {
-        employeeName: "darin",
-        directReports: ["jordana", "everett", "bertha"],
-      },
-      {
-        employeeName: "kacie",
-        directReports: ["peg", "hugh", "eveleen"],
-      },
-      {
-        employeeName: "eveleen",
-        directReports: ["evelina"],
-      },
-    ],
-    employeeHierarchiesToDisplay: ["evelina", "bertha"],
-  },
-  {
-    projectName: "ProjectQuant",
-    employees: ["maurice", "hayleigh", "edwyn", "keane", "kylee"],
-    employeeHierarchies: [
-      {
-        employeeName: "maurice",
-        directReports: ["hayleigh", "edwyn"],
-      },
-      {
-        employeeName: "hayleigh",
-        directReports: ["edwyn", "keane", "kylee"],
-      },
-    ],
-    employeeHierarchiesToDisplay: ["kylee", "edwyn"],
-  },
-  {
-    projectName: "ProjectGeorgia",
-    employees: ["lori", "fletcher", "tabitha", "linton", "tressa", "rosanna"],
-    employeeHierarchies: [
-      {
-        employeeName: "tabitha",
-        directReports: ["linton", "tressa"],
-      },
-    ],
-    employeeHierarchiesToDisplay: ["rosanna"],
-  },
-];
+// const projects = [
+//   {
+//     projectName: "ProjectMidland",
+//     employees: [
+//       "raelynn",
+//       "darin",
+//       "kacie",
+//       "jordana",
+//       "everett",
+//       "bertha",
+//       "peg",
+//       "hugh",
+//       "eveleen",
+//       "evelina",
+//     ],
+//     employeeHierarchies: [
+//       {
+//         employeeName: "raelynn",
+//         directReports: ["darin", "kacie"],
+//       },
+//       {
+//         employeeName: "darin",
+//         directReports: ["jordana", "everett", "bertha"],
+//       },
+//       {
+//         employeeName: "kacie",
+//         directReports: ["peg", "hugh", "eveleen"],
+//       },
+//       {
+//         employeeName: "eveleen",
+//         directReports: ["evelina"],
+//       },
+//     ],
+//     employeeHierarchiesToDisplay: ["evelina", "bertha"],
+//   },
+//   {
+//     projectName: "ProjectQuant",
+//     employees: ["maurice", "hayleigh", "edwyn", "keane", "kylee"],
+//     employeeHierarchies: [
+//       {
+//         employeeName: "maurice",
+//         directReports: ["hayleigh", "edwyn"],
+//       },
+//       {
+//         employeeName: "hayleigh",
+//         directReports: ["edwyn", "keane", "kylee"],
+//       },
+//     ],
+//     employeeHierarchiesToDisplay: ["kylee", "edwyn"],
+//   },
+//   {
+//     projectName: "ProjectGeorgia",
+//     employees: ["lori", "fletcher", "tabitha", "linton", "tressa", "rosanna"],
+//     employeeHierarchies: [
+//       {
+//         employeeName: "tabitha",
+//         directReports: ["linton", "tressa"],
+//       },
+//     ],
+//     employeeHierarchiesToDisplay: ["rosanna"],
+//   },
+// ];
 
 const output = generateEmployeeHierarchies(projects);
 console.log(JSON.stringify(output, null, 2));
