@@ -106,3 +106,16 @@ function checkForErrors(
 
 const output = generateEmployeeHierarchies(projects);
 console.log(JSON.stringify(output, null, 2));
+// function writeOutputToFile(output) {
+//   const data = JSON.stringify(output, null, 2);
+//   fs.writeFile("./JSON/output.json", data, (err) => {
+//     if (err) {
+//       console.error("Error writing output file:", err);
+//     } else {
+//       console.log("Output file has been written successfully.");
+//     }
+//   });
+// }
+
+// const output = generateEmployeeHierarchies(projects);
+// writeOutputToFile(output);
