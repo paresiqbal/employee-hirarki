@@ -40,6 +40,10 @@ function generateEmployeeHierarchies(projects) {
   return output;
 }
 
+module.exports = {
+  generateEmployeeHierarchies: generateEmployeeHierarchies,
+};
+
 function findSuperiors(employeeName, employeeHierarchies) {
   const superiors = [];
 
