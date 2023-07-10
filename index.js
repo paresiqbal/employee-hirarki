@@ -1,10 +1,10 @@
 const fs = require("fs");
-
 const projects = require("./input.json");
 
-function generateEmployeeHierarchies(projects) {
+function makeEmployeeHirarki(projects) {
   const output = [];
 
+  // initiate project element
   projects.forEach((project) => {
     const {
       projectName,
@@ -12,8 +12,10 @@ function generateEmployeeHierarchies(projects) {
       employeeHierarchies,
       employeeHierarchiesToDisplay,
     } = project;
+
     const employeeHierarchiesResult = [];
 
+    // display employee hirarki
     employeeHierarchiesToDisplay.forEach((employeeName) => {
       const superiors = findSuperiors(employeeName, employeeHierarchies);
       if (superiors) {
@@ -21,7 +23,8 @@ function generateEmployeeHierarchies(projects) {
       }
     });
 
-    const error = checkForErrors(
+    // check for error
+    const error = checkError(
       employees,
       employeeHierarchies,
       employeeHierarchiesResult
@@ -41,9 +44,10 @@ function generateEmployeeHierarchies(projects) {
 }
 
 module.exports = {
-  generateEmployeeHierarchies: generateEmployeeHierarchies,
+  makeEmployeeHirarki: makeEmployeeHirarki,
 };
 
+// create superiors
 function findSuperiors(employeeName, employeeHierarchies) {
   const superiors = [];
 
@@ -60,11 +64,7 @@ function findSuperiors(employeeName, employeeHierarchies) {
   return superiors.length ? superiors : null;
 }
 
-function checkForErrors(
-  employees,
-  employeeHierarchies,
-  employeeHierarchiesResult
-) {
+function checkError(employees, employeeHierarchies, employeeHierarchiesResult) {
   const employeeSet = new Set(employees);
   const employeesWithoutHierarchy = new Set(employees);
 
@@ -110,13 +110,14 @@ function checkForErrors(
   return null;
 }
 
-const output = generateEmployeeHierarchies(projects);
+const output = makeEmployeeHirarki(projects);
 const outputJSON = JSON.stringify(output, null, 2);
 
+// write the output.json file
 fs.writeFile("./output.json", outputJSON, (err) => {
   if (err) {
     console.error("Error writing JSON file:", err);
   } else {
-    console.log("Output JSON file has been generated successfully.");
+    console.log("Output has been successfuly made.");
   }
 });
